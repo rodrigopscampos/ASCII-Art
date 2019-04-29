@@ -14,26 +14,31 @@ namespace AsciiArts
             while (true)
             {
                 QuadradoPreenchido();
-
+                
                 Thread.Sleep(5000);
                 Console.Clear();
-
+                
                 Escada();
-
+                
                 Thread.Sleep(5000);
                 Console.Clear();
-
+                
                 X();
-
+                
                 Thread.Sleep(5000);
                 Console.Clear();
-
+                
                 TrianguloPreenchido();
+                
+                Thread.Sleep(5000);
+                Console.Clear();
+                
+                LosangoPreenchido();
 
                 Thread.Sleep(5000);
                 Console.Clear();
 
-                LosangoPreenchido();
+                Circulo();
 
                 Thread.Sleep(5000);
                 Console.Clear();
@@ -192,6 +197,44 @@ namespace AsciiArts
                     Console.Write("#");
                     Thread.Sleep(200);
                 }
+            }
+        }
+
+        static void Circulo()
+        {
+            Console.WriteLine();
+
+            int margem = 5;
+            int diametro = 50;
+            int raio = diametro / 2;
+
+            for (int v = 0; v <= diametro; v++)
+            {
+                for (int m = 0; m < margem; m++)
+                    Console.Write(" ");
+
+                double x1 = raio - Math.Sqrt(
+                    Math.Pow(raio, 2) - Math.Pow((raio - v), 2)
+                    );
+
+                double x2 = raio + Math.Sqrt(
+                    Math.Pow(raio, 2) - Math.Pow((raio - v), 2)
+                    );
+
+                for (int h = 0; h < diametro; h++)
+                {
+                    if (h >= (int)x1 && h <= x2)
+                    {
+                        Console.Write("**");
+                        Thread.Sleep(25);
+                    }
+                    else
+                    {
+                        Console.Write("  ");
+                    }
+                }
+
+                Console.WriteLine();
             }
         }
     }
