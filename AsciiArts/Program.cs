@@ -14,32 +14,30 @@ namespace AsciiArts
             while (true)
             {
                 QuadradoPreenchido();
-                
                 Thread.Sleep(5000);
                 Console.Clear();
-                
-                Escada();
-                
-                Thread.Sleep(5000);
-                Console.Clear();
-                
-                X();
-                
-                Thread.Sleep(5000);
-                Console.Clear();
-                
-                TrianguloPreenchido();
-                
-                Thread.Sleep(5000);
-                Console.Clear();
-                
-                LosangoPreenchido();
 
+                Escada();
+                Thread.Sleep(5000);
+                Console.Clear();
+
+                X();
+                Thread.Sleep(5000);
+                Console.Clear();
+
+                TrianguloPreenchido();
+                Thread.Sleep(5000);
+                Console.Clear();
+
+                LosangoPreenchido();
+                Thread.Sleep(5000);
+                Console.Clear();
+
+                Trapezio();
                 Thread.Sleep(5000);
                 Console.Clear();
 
                 Circulo();
-
                 Thread.Sleep(5000);
                 Console.Clear();
             }
@@ -73,6 +71,35 @@ namespace AsciiArts
                 b--;
 
                 Console.WriteLine();
+            }
+        }
+
+        static void Trapezio()
+        {
+            Console.WriteLine();
+
+            int baseMaior = 22;
+            int baseMenor = 11;
+            int margem = (baseMaior - baseMenor) / 2;
+            int aux = 0;
+
+            while (aux <= margem)
+            {
+                for (int h = 0; h <= baseMaior; h++)
+                {
+                    if (h >= margem - aux && h <= margem + baseMenor + aux)
+                    {
+                        Console.Write("**");
+                        Thread.Sleep(50);
+                    }
+                    else
+                    {
+                        Console.Write("  ");
+                    }
+                }
+
+                Console.WriteLine();
+                aux++;
             }
         }
 
