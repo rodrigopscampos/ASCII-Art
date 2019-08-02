@@ -36,9 +36,9 @@ namespace AsciiArts
                 Trapezio();
                 Thread.Sleep(5000);
                 Console.Clear();
-
+                
                 Circulo();
-                Thread.Sleep(5000);
+                Thread.Sleep(10000);
                 Console.Clear();
             }
         }
@@ -59,7 +59,7 @@ namespace AsciiArts
                     if (a == c || b == c)
                     {
                         Console.Write("#");
-                        Thread.Sleep(200);
+                        Thread.Sleep(100);
                     }
                     else
                     {
@@ -121,7 +121,7 @@ namespace AsciiArts
                         for (int ld = 0; ld < larguraDegrau; ld++)
                         {
                             Console.Write("#");
-                            Thread.Sleep(300);
+                            Thread.Sleep(100);
                         }
                     }
                     else
@@ -222,7 +222,7 @@ namespace AsciiArts
                 for (int c = 0; c < 10; c++)
                 {
                     Console.Write("#");
-                    Thread.Sleep(200);
+                    Thread.Sleep(50);
                 }
             }
         }
@@ -253,7 +253,7 @@ namespace AsciiArts
                     if (h >= (int)x1 && h <= x2)
                     {
                         Console.Write("**");
-                        Thread.Sleep(25);
+                        //Thread.Sleep(25);
                     }
                     else
                     {
