@@ -13,32 +13,36 @@ namespace AsciiArts
         {
             while (true)
             {
-                QuadradoPreenchido();
-                Thread.Sleep(5000);
+                Retangulo();
+                Sleep();
                 Console.Clear();
 
                 Escada();
-                Thread.Sleep(5000);
+                Sleep();
+                Console.Clear();
+
+                TrianguloReto();
+                Sleep();
+                Console.Clear();
+
+                TrianguloEquilatero();
+                Sleep();
+                Console.Clear();
+
+                Losango();
+                Sleep();
                 Console.Clear();
 
                 X();
-                Thread.Sleep(5000);
-                Console.Clear();
-
-                TrianguloPreenchido();
-                Thread.Sleep(5000);
-                Console.Clear();
-
-                LosangoPreenchido();
-                Thread.Sleep(5000);
+                Sleep();
                 Console.Clear();
 
                 Trapezio();
-                Thread.Sleep(5000);
+                Sleep();
                 Console.Clear();
-                
+
                 Circulo();
-                Thread.Sleep(10000);
+                Sleep();
                 Console.Clear();
             }
         }
@@ -134,7 +138,7 @@ namespace AsciiArts
             }
         }
 
-        static void LosangoPreenchido()
+        static void Losango()
         {
             int margem = 5;
             int largura = 25;
@@ -151,7 +155,7 @@ namespace AsciiArts
                     if (c >= centro - area && c <= centro + area)
                     {
                         Console.Write("#");
-                        Thread.Sleep(50);
+                        Thread.Sleep(25);
                     }
                     else
                     {
@@ -185,7 +189,7 @@ namespace AsciiArts
             }
         }
 
-        static void TrianguloPreenchido()
+        static void TrianguloEquilatero()
         {
             Console.WriteLine();
 
@@ -200,7 +204,7 @@ namespace AsciiArts
                     if (c >= centro - area && c <= centro + area)
                     {
                         Console.Write("#");
-                        Thread.Sleep(50);
+                        Thread.Sleep(25);
                     }
                     else
                     {
@@ -213,16 +217,34 @@ namespace AsciiArts
             }
         }
 
-        static void QuadradoPreenchido()
+        static void TrianguloReto()
         {
-            for (int l = 0; l < 10; l++)
+            Console.WriteLine();
+
+            int altura = 10;
+
+            for (int y = 0; y < altura; y++)
+            {
+                for (int aux = 0; aux <= y; aux++)
+                {
+                    Console.Write("#");
+                    Thread.Sleep(25);
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        static void Retangulo()
+        {
+            for (int l = 0; l < 15; l++)
             {
                 Console.WriteLine();
 
                 for (int c = 0; c < 10; c++)
                 {
                     Console.Write("#");
-                    Thread.Sleep(50);
+                    Thread.Sleep(30);
                 }
             }
         }
@@ -253,7 +275,7 @@ namespace AsciiArts
                     if (h >= (int)x1 && h <= x2)
                     {
                         Console.Write("**");
-                        //Thread.Sleep(25);
+                        Thread.Sleep(5);
                     }
                     else
                     {
@@ -263,6 +285,11 @@ namespace AsciiArts
 
                 Console.WriteLine();
             }
+        }
+
+        static void Sleep()
+        {
+            Thread.Sleep(3000);
         }
     }
 }
